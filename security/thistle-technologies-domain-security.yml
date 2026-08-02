@@ -1,0 +1,35 @@
+generated: '2026-07-21'
+method: probed
+source: https://dns.google/resolve (DoH, DNSSEC-validating + CD=1 bypass)
+notes: >-
+  thistle.tech is the company's canonical domain but currently fails DNSSEC
+  validation: the .tech parent zone publishes a DS record (keytag 1792, alg 8,
+  digest type 2) for thistle.tech, yet the zone itself publishes NO matching
+  DNSKEY, so every validating resolver returns SERVFAIL and the name does not
+  resolve (curl/WebFetch see ENOTFOUND). With DNSSEC checking disabled (CD=1)
+  the apex has no A/AAAA record (NODATA) and www / api / docs / developer / app /
+  blog / portal subdomains are NXDOMAIN, so no web host is currently served. No
+  MX and no TXT (no SPF) are published at the apex. Nameservers are DreamHost.
+  Absence of records here is recorded, not inferred.
+hosts:
+  - host: thistle.tech
+    resolves: false
+    resolves_reason: dnssec-servfail (DS present, no DNSKEY in zone)
+    a_record: none
+    aaaa_record: none
+    https: unknown
+  - host: www.thistle.tech
+    resolves: false
+    resolves_reason: nxdomain
+    https: unknown
+domains:
+  - domain: thistle.tech
+    nameservers: [ns1.dreamhost.com, ns2.dreamhost.com, ns3.dreamhost.com]
+    dnssec_ds_at_parent: true
+    dnssec_dnskey_in_zone: false
+    dnssec_status: broken
+    dnssec_detail: DS at .tech references a DNSKEY that is not published in the zone; validating resolvers SERVFAIL
+    caa: []
+    spf: false
+    dmarc: none
+    mx: []

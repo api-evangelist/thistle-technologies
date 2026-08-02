@@ -1,7 +1,20 @@
 aid: thistle-technologies
 name: Thistle Technologies
-description: Thistle Technologies is a company surfaced as a portfolio company of dcvc and added to the
-  API Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+description: >-
+  Thistle Technologies provides security tools, libraries, and services for the
+  developers who build connected and embedded devices. Founded by security
+  veteran Window Snyder and backed by DCVC, the company offers a turnkey
+  embedded-device security platform whose two headline products are the Thistle
+  Update Solution (end-to-end over-the-air firmware and software updates for
+  Embedded Linux on ARM/ARM64 and x86-64 as well as Infineon PSoC 6
+  microcontrollers) and Thistle Secure Boot Enablement (tools and services for
+  enabling secure/verified boot with managed key handling and firmware signing
+  on hardware such as Espressif ESP32, Infineon OPTIGA Trust M secure elements,
+  and U-Boot targets including the Raspberry Pi 4 and BeagleBone). Thistle helps
+  device makers add mechanisms that keep IoT and edge/AI hardware updatable and
+  resistant to compromise without building the security infrastructure
+  themselves. The offering is delivered as SDKs, libraries, and managed services
+  integrated into a customer's device firmware rather than as a public web API.
 url: https://raw.githubusercontent.com/api-evangelist/thistle-technologies/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -9,14 +22,43 @@ x-backed-by:
 - dcvc
 x-tier: stub
 x-tier-reason: portfolio-lead
+accessModel:
+  pricing: unknown
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Unknown
+  confidence: low
+  source: []
+  generated: '2026-07-22'
+  method: derived
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-21'
 tags:
 - Company
+- Device Security
+- Embedded Security
+- IoT Security
+- Firmware Updates
+- Over-the-Air Updates
+- Secure Boot
+- Edge AI
+- Security
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/thistle-technologies.png
 apis: []
+common:
+- type: Website
+  url: https://thistle.tech/
+  name: Thistle Technologies
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+x-enrichment:
+  date: '2026-07-21'
+  status: minimal
+  artifacts_added: 1
+  pass: local-v1
